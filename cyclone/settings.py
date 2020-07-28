@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '782eb)rp&x@l0&^ntnw7_3l-+_k(_5%i3^db*x73yjcqsd-fhm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -135,6 +135,6 @@ STATIC_URL = '/static/'
 CELERY_BEAT_SCHEDULE = {
     "fetch_data_task": {
         "task": "cyclone.tasks.fetch_data_task",
-        "schedule": crontab(minute="*/1"),
+        "schedule": crontab(hour="*/1"),
     },
 }

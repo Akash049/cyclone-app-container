@@ -6,11 +6,6 @@ import requests, re
 from bs4 import BeautifulSoup
 from forecast.models import *
 
-today = timezone.now()
-tomorrow = today + timedelta(1)
-today_start = make_aware(datetime.combine(today, time()))
-today_end = make_aware(datetime.combine(tomorrow, time()))
-
 URL = 'http://rammb.cira.colostate.edu/products/tc_realtime/index.asp'
 FORECAST_TABLE_PREFIX_URL = "http://rammb-data.cira.colostate.edu/tc_realtime/%s"
 IMAGE_URL_PREFIX = "https://rammb-data.cira.colostate.edu/%s"
